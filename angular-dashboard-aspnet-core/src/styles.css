@@ -22,7 +22,7 @@ a:hover {
 }
 
 .shadow {
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2), 0 5px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2), 0 5px 6px rgba(0,0,0,0.3)!important;
 }
 
 .section-container {
