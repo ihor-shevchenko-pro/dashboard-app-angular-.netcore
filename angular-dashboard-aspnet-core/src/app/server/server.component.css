@@ -11,7 +11,8 @@
 
 .status {
     display: block;
-    transition: 0.3;
+    transition: 0.3s;
+    width: 100% !important;
 }
 
 .name {
@@ -19,7 +20,8 @@
     font-size: 0.7em;
     display: block;
     font-family: monospace;
-    transition: 0.3;
+    transition: 0.3s !important;
+    width: 100%;
 }
 
 .action {
@@ -27,4 +29,5 @@
     font-size: 0.7em;
     margin-top: 12px;
     transition: 0.3s;
+    width: 100% !important;
 }
