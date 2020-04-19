@@ -6,7 +6,7 @@ import { Order } from '../core/models/order';
 @Injectable({
   providedIn: 'root'
 })
-export class OrderService {
+export class SalesService {
 
   constructor(private _http: HttpClient) { }
 

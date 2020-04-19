@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/core/models/order';
 import { MOCK_ORDERS } from '../../core/shared/mock.orders';
-import { OrderService } from 'src/app/services/order.service';
+import { SalesService } from 'src/app/services/sales.service';
 
 @Component({
   selector: 'app-section-orders',
@@ -10,7 +10,7 @@ import { OrderService } from 'src/app/services/order.service';
 })
 export class SectionOrdersComponent implements OnInit {
 
-  constructor(private _orderService: OrderService) { }
+  constructor(private _salesService: SalesService) { }
 
   // public orders: Order[] = MOCK_ORDERS;
   public orders: Order[];
@@ -24,7 +24,7 @@ export class SectionOrdersComponent implements OnInit {
   }
 
   public getOrders(): void {
-    this._orderService.getOrders(this.page, this.limit)
+    this._salesService.getOrders(this.page, this.limit)
       .subscribe(res => {
         console.log('Result from getOrders: ', res);
         this.orders = res['page']['data'];

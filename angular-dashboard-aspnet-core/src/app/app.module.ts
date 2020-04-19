@@ -16,6 +16,8 @@ import { LineChartComponent } from './charts/line-chart/line-chart.component';
 import { ServerComponent } from './server/server.component';
 import { PaginationComponent } from './pagination/pagination.component';
 
+import { SalesService } from './services/sales.service';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { PaginationComponent } from './pagination/pagination.component';
     HttpClientModule,
     ChartsModule
   ],
-  providers: [],
+  providers: [
+    SalesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
