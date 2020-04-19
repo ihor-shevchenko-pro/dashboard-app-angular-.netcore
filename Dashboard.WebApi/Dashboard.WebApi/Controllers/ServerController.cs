@@ -46,7 +46,7 @@ namespace Dashboard.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Message(int id, [FromBody] ServerMessageApiModel model)
+        public async Task<ActionResult> Put(int id, [FromBody] ServerUpdateApiModel model)
         {
 
             var server = await _context.Servers.FirstOrDefaultAsync(s => s.Id == id);
