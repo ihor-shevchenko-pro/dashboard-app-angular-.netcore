@@ -50,4 +50,14 @@ export class SectionOrdersComponent implements OnInit {
     this.getOrders();
   }
 
+  public goToFirst(): void {
+    this.page = this.page;
+    this.getOrders();
+  }
+
+  public goToLast(): void {
+    this.page = this.total;
+    this.getOrders();
+  }
+
 }
