@@ -1,4 +1,5 @@
-﻿using Dashboard.WebApi.DataContext;
+﻿using Dashboard.WebApi.ApiModels.Base;
+using Dashboard.WebApi.DataContext;
 using Dashboard.WebApi.DomainModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,14 +24,14 @@ namespace Dashboard.WebApi.Controllers
         public ActionResult Get(int pageIndex, int pageSize)
         {
             var data = _context.Customers.OrderBy(c => c.Id);
-            //var page = new PaginatedResponse<Customer>(data, pageIndex, pageSize);
+            var page = new PaginatedResponse<Customer>(data, pageIndex, pageSize);
 
             var totalCount = data.Count();
             var totalPages = Math.Ceiling((double)totalCount / pageSize);
 
             var response = new
             {
-                //Page = page,
+                Page = page,
                 TotalPages = totalPages
             };
 
