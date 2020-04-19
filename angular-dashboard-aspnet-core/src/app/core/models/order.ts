@@ -3,8 +3,8 @@ import { Customer } from './customer';
 export interface Order {
     id: number;
     customer: Customer;
-    total: number;
+    orderTotal: number;
     placed: Date;
-    fulfilled: Date;
+    completed: Date;
     status: string;
 }
