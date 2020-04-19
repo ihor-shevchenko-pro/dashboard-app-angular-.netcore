@@ -28,14 +28,18 @@ namespace Dashboard.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // CORS
-            services.AddCors(opt =>
+            // Enable CORS
+            services.AddCors(options =>
             {
-                opt.AddPolicy("CorsPolicy",
-                    b => b.AllowAnyOrigin()
-                          .AllowAnyMethod()
-                          .AllowAnyHeader()
-                          .AllowCredentials());
+                options.AddPolicy("EnableCORS", builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                           .AllowAnyOrigin()
+                           .AllowAnyHeader()
+                           .AllowAnyMethod()
+                           //.AllowCredentials()
+                           .Build();
+                });
             });
 
             services.AddControllers();
@@ -56,6 +60,9 @@ namespace Dashboard.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // CORS
+            app.UseCors("EnableCORS");
 
             // Start data seed to Db
             dataSeed.SeedData(20, 1000);
