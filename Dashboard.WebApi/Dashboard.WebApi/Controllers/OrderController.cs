@@ -66,10 +66,10 @@ namespace Dashboard.WebApi.Controllers
             var groupedResult = orders.GroupBy(r => r.Customer.Id)
                                       .ToList()
                                       .Select(grp => new
-                                      {
-                                        Name = _context.Customers.Find(grp.Key).Name,
-                                        Total = grp.Sum(x => x.OrderTotal)
-                                      }).OrderByDescending(r => r.Total)
+                                       {
+                                           Name = _context.Customers.Find(grp.Key).Name,
+                                           Total = grp.Sum(x => x.OrderTotal)
+                                       }).OrderByDescending(r => r.Total)
                                       .Take(number)
                                       .ToList();
 

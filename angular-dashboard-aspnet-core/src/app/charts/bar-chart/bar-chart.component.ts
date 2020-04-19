@@ -44,7 +44,7 @@ export class BarChartComponent implements OnInit {
     });
   }
 
-  public getChartData(res: Order) {
+  public getChartData(res: Order[]) {
     this.orders = res['page']['data'];
     const data = this.orders.map(o => o.orderTotal);
     const formattedOrders = this.orders.reduce((r, e) => {
