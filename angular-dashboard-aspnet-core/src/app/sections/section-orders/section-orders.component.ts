@@ -16,7 +16,7 @@ export class SectionOrdersComponent implements OnInit {
   public orders: Order[];
   public total: number = 0;
   public page: number = 1;
-  public limit: number = 10;
+  public limit: number = 8;
   public loading: boolean = false;
 
   ngOnInit(): void {
